@@ -8,6 +8,10 @@ import './App.css';
 const getGihubRepoData = ({ numberOfStars }) => {
   return axios({
     url: 'https://api.github.com/search/repositories',
+    auth: {
+      username: process.env.REACT_APP_GITHUB_USERNAME,
+      password: process.env.REACT_APP_GITHUB_TOKEN,
+    },
     params:{
       q: `stars:>${numberOfStars}`,
       sort: 'stars',
