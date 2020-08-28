@@ -1,3 +1,18 @@
-ul {
-  list-style: none;
+.App {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#filters-container {
+  padding: 25px;
+  border-right: 1px solid grey;
+}
+
+#title {
+  font-size: 4rem;
 }

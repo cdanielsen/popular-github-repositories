@@ -1,9 +1,10 @@
 import React from 'react';
+import './StarSelector.css';
 
 const StarSelector = ({ numberOfStars, setNumberOfStars }) => {
   return (
-    <>
-      <label htmlFor="star-selector">Github Stars</label>
+    <div id="star-selector-container">
+      <label htmlFor="star-selector">Github Stars (Minimum)</label>
       <input
         value={numberOfStars || 0}
         type="number"
@@ -13,7 +14,7 @@ const StarSelector = ({ numberOfStars, setNumberOfStars }) => {
         max="50000"
         onChange={({ target }) => setNumberOfStars(target.value)}
       />
-    </>
+    </div>
   );
 }
  

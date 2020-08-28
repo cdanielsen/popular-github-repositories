@@ -1,0 +1,8 @@
+#star-selector-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#star-selector {
+  margin-top: 10px;
+}

@@ -38,14 +38,18 @@ function App() {
 
   return (
     <div className="App">
+      <h1 id="title">Github Repo Search</h1>
       {
         repoToDisplay
         ? <RepoDetail repoDetails={getRepoDetails(repos, repoToDisplay)} setRepoToDisplay={setRepoToDisplay}></RepoDetail>
         : (
-        <>
+        <main>
+          <div id='filters-container'>
+            <h2>Filters:</h2>
+            <StarSelector numberOfStars={numberOfStars} setNumberOfStars={setNumberOfStars}/>
+          </div>
           <RepoList repos={repos} fetchError={fetchError} setRepoToDisplay={setRepoToDisplay}/>
-          <StarSelector numberOfStars={numberOfStars} setNumberOfStars={setNumberOfStars}/>
-        </>
+        </main>
         )
       }
     </div>

@@ -1,0 +1,11 @@
+ul {
+  list-style: none;
+}
+
+#repo-list li{
+  margin: 0.5rem;
+}
+
+#repo-list .repo-name {
+  padding-right: 10px;
+}

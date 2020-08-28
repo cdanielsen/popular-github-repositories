@@ -1,7 +1,8 @@
 
 import React from 'react';
+import './RepoList.css'
 
-const GithubRepoList = ({ repos, fetchError, setRepoToDisplay }) => {
+const RepoList = ({ repos, fetchError, setRepoToDisplay }) => {
   if (fetchError) {
     return <div>Frowny Face: Failed to fetch from GH! Try Refreshing</div>
   }
@@ -11,11 +12,11 @@ const GithubRepoList = ({ repos, fetchError, setRepoToDisplay }) => {
       {!repos
         ? 'Gettin\' stuff from Github!'
         : 
-        <ul name="github-list" onClick={({target}) => setRepoToDisplay(target.textContent)}>
+        <ul id="repo-list" onClick={({target}) => setRepoToDisplay(target.textContent)}>
           {repos.map(({id, name, stargazers_count}) =>
               <li key={id}>
-                  <strong>{`${name}`}</strong>
-                  {`${stargazers_count}`}
+                  <span className="repo-name"><strong>{`${name}`}</strong></span>
+                  <span className="repo-star-count">{`${stargazers_count} `}{String.fromCharCode(10026)}</span>
               </li>
           )}
         </ul>
@@ -24,4 +25,4 @@ const GithubRepoList = ({ repos, fetchError, setRepoToDisplay }) => {
   );
 }
 
-export default GithubRepoList;
+export default RepoList;
