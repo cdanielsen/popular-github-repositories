@@ -15,11 +15,11 @@ Set actual values in the `.env.local.example` file and rename to `.env.local` to
 
 ### User stories / TODO
 
-(/) As a user, I want to fetch all Github repositories above 25k stars and display the repo name and star count (stargazers_count) on screen
-(/) As a user, I want some indication that data is being fetched
-(/) As a user, I want to be able to specify the stars-count theshold that determines which which repos will be displayed
-(/) As a user, I want to click on one of the rows and be taken to a "Repo details" view that contains repo name, stargazers_count, forks_count, and a link to the repository (html_url). Please use component state for this instead of using a library like react-router
-(/) As a user, I want a "Back" button to return to the list of repos
-() As a user, I want results to be paginated with 5 repos on each page
-() As a user, I want everything to be styled and look good
+- (X) As a user, I want to fetch all Github repositories above 25k stars and display the repo name and star count (stargazers_count) on screen
+- (X) As a user, I want some indication that data is being fetched
+- (X) As a user, I want to be able to specify the stars-count theshold that determines which which repos will be displayed
+- (X) As a user, I want to click on one of the rows and be taken to a "Repo details" view that contains repo name, stargazers_count, forks_count, and a link to the repository (html_url). Please use component state for this instead of using a library like react-router
+- (X) As a user, I want a "Back" button to return to the list of repos
+- () As a user, I want results to be paginated with 5 repos on each page
+- () As a user, I want everything to be styled and look good
 
