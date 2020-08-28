@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import RepoDetail from './RepoDetail';
 import RepoList from './RepoList'
 import StarSelector from './StarSelector';
 import './App.css';
@@ -15,13 +16,17 @@ const getGihubRepoData = ({ numberOfStars }) => {
   })
 }
 
+const getRepoDetails = (repos, repoName) => {
+  return repos.find(repo => repo.name === repoName)
+}
+
 function App() {
   const [numberOfStars, setNumberOfStars] = useState(0);
   const [repos, setRepos] = useState(null);
   const [fetchError, setFetchError] = useState(false);
+  const [repoToDisplay, setRepoToDisplay] = useState(null);
 
   useEffect(() => {
-    console.log('Sending!', numberOfStars)
     getGihubRepoData({ numberOfStars })
       .then(({ data }) => {
         setRepos(data.items)
@@ -33,8 +38,16 @@ function App() {
 
   return (
     <div className="App">
-      <RepoList repos={repos} fetchError={fetchError}/>
-      <StarSelector numberOfStars={numberOfStars} setNumberOfStars={setNumberOfStars}/>
+      {
+        repoToDisplay
+        ? <RepoDetail repoDetails={getRepoDetails(repos, repoToDisplay)} setRepoToDisplay={setRepoToDisplay}></RepoDetail>
+        : (
+        <>
+          <RepoList repos={repos} fetchError={fetchError} setRepoToDisplay={setRepoToDisplay}/>
+          <StarSelector numberOfStars={numberOfStars} setNumberOfStars={setNumberOfStars}/>
+        </>
+        )
+      }
     </div>
   );
 }
